@@ -18,7 +18,7 @@ Note: These additional libraries are also required:
 ## How use
 ### Installing the Package
     
-    pip install fibos_1.0.1
+    pip install git+https://github.com/hersonhebert/fibos
     
 ### Using the Package:
 In this beta version, only two functions were implemented: **occluded_surface** and **read_OS**.
