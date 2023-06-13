@@ -1,0 +1,84 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module surfcal76 ! in 
+    interface  ! in :surfcal76
+        subroutine surfcal ! in :surfcal76:surfcal76.f
+            integer :: nseg
+            character dimension(2000,3),intent(c) :: secnm
+            integer dimension(2000) :: secsq
+            character dimension(20000,4),intent(c) :: atnm
+            integer dimension(2000) :: iats
+            integer dimension(2000) :: iate
+            integer dimension(2000) :: seqcd
+            integer :: natom
+            real dimension(20000,3) :: cr
+            character dimension(2000,1),intent(c) :: secsqe
+            character dimension(2000,1),intent(c) :: rescid
+            character dimension(5,13),intent(c) :: resinf
+            character*13 :: residen
+            real dimension(20000) :: vdwrad
+            integer :: inter
+            integer :: icter
+            common /resids/ nseg,secnm,secsq,atnm,iats,iate,seqcd,natom
+            common /coord/ cr,secsqe,rescid
+            common /anput/ resinf,residen
+            common /vdw/ vdwrad,inter,icter
+        end subroutine surfcal
+        subroutine asorder(nuniq,ncount,parea,dtmin,iuni) ! in :surfcal76:surfcal76.f
+            integer dimension(1200) :: nuniq
+            integer dimension(1200) :: ncount
+            real dimension(1200) :: parea
+            real dimension(1200) :: dtmin
+            integer :: iuni
+        end subroutine asorder
+        subroutine bsurf(rayflag,attype,vdwr,nvdwt,restyp) ! in :surfcal76:surfcal76.f
+            integer :: rayflag
+            character dimension(50,3),intent(c) :: attype
+            real dimension(50) :: vdwr
+            integer :: nvdwt
+            character dimension(50,3),intent(c) :: restyp
+            integer :: nseg
+            character dimension(2000,3),intent(c) :: secnm
+            integer dimension(2000) :: secsq
+            character dimension(20000,4),intent(c) :: atnm
+            integer dimension(2000) :: iats
+            integer dimension(2000) :: iate
+            integer dimension(2000) :: seqcd
+            integer :: natom
+            real dimension(20000,3) :: cr
+            character dimension(2000,1),intent(c) :: secsqe
+            character dimension(2000,1),intent(c) :: rescid
+            character dimension(5,13),intent(c) :: resinf
+            character*13 :: residen
+            real dimension(20000) :: vdwrad
+            integer :: inter
+            integer :: icter
+            common /resids/ nseg,secnm,secsq,atnm,iats,iate,seqcd,natom
+            common /coord/ cr,secsqe,rescid
+            common /anput/ resinf,residen
+            common /vdw/ vdwrad,inter,icter
+        end subroutine bsurf
+        subroutine intsect(spc,dcl,dcm,dcn,ptc,sphrad,iretro,iflag,dmin,dist6) ! in :surfcal76:surfcal76.f
+            real dimension(3) :: spc
+            real :: dcl
+            real :: dcm
+            real :: dcn
+            real dimension(3) :: ptc
+            real :: sphrad
+            integer :: iretro
+            integer :: iflag
+            real :: dmin
+            real :: dist6
+        end subroutine intsect
+        subroutine assvdw(attype,vdwr,nvdwt,restyp) ! in :surfcal76:surfcal76.f
+            character dimension(50,3),intent(c) :: attype
+            real dimension(50) :: vdwr
+            integer :: nvdwt
+            character dimension(50,3),intent(c) :: restyp
+        end subroutine assvdw
+    end interface 
+end python module surfcal76
+
+! This file was auto-generated with f2py (version:1.21.5).
+! See http://cens.ioc.ee/projects/f2py2e/
