@@ -28,7 +28,7 @@ def clean(file):
     with open(file,"r") as file, open("temp.cln","w") as new_file:
         for line in file:
             if line.startswith("ATOM"):
-                if line[13]!="H" and line[12]!="H":
+                if line[13]!="H" and line[12]!="H" and line[13:16]!="OXT" and line[13:15] !="2H" and line[13:15]!="3H" and line[13]!="D" and line[12]!="D":
                     if not(line[16] in l1) and not (line[26] in l2):
                         if (line[16] in l3):
                             line = line[:16]+" "+line[17:]

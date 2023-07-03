@@ -26,6 +26,7 @@ def occluded_surface(pdb,method):
         meth = 2
     else:
         print("Wrong Method")
+    meth = 1
     main_intermediary.call_main(IRESF,iresl,MAX_RES,MAX_AT,meth)
     remove_files()
 
