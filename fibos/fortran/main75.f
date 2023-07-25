@@ -93,7 +93,7 @@ c        iresl = 76
 
 c Read flag for printing of rays
 c       read(5,10) rayflag
-        rayflag = "n"
+        rayflag = "y"
 
 c Open pdb file as unit=1
        open (unit=1, file="temp.pdb", status='old')
@@ -310,7 +310,7 @@ c--------------------------------------------------------------------
         close(kanala)
 
 
-        rayflag="n"
+        rayflag="y"
 c Prepare input for ray analysis
          open(unit=9,file='part.inp',status='unknown')
 

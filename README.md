@@ -9,7 +9,7 @@ Firstly, it is necessary to have the following packages installed:
 
     pip install biopython
     pip install numpy
-    pip install setuptools
+    pip install pymol
 Note: These additional libraries are also required:
  - os
  - shutil
@@ -35,11 +35,54 @@ The second function read a "prot.srt" file.
 
 
 ## Examples
+#### First Example:
+```
+import fibos
 
-    import fibos
-    fibos.occluded_surface("1ppf", method = "OS")
+def visualize(pdb, methodology):
+    # Call occluded surface function
+    fibos.occluded_surface(pdb, methodology)
+    # Plot PDB File and Dots
+    fibos.disp_dots("raydist.lst", pdb)
+
+if __name__ == '__main__':
+    #Call visualize function, with 1ubq as PDB file and OS Methodology
+    visualize("1ubq","OS")
+```
+##### Output:
+![img_3.png](img_3.png)
+#### Second Example:
+```
+import fibos
+
+def visualize(pdb, methodology):
+    # Call occluded surface function
+    fibos.occluded_surface(pdb, methodology)
+    # Plot PDB File and Rays
+    fibos.disp_rays("raydist.lst", pdb)
+
+if __name__ == '__main__':
+    #Call visualize function, with 1ubq as PDB file and FIBOS Methodology
+    visualize("1ubq","FIBOS")
+```
+##### Output:
+![img_1.png](img_1.png)
+#### Third Example:
+```
+import fibos
+
+def osp_calcule(pdb, methodology):
+    # Call occluded surface function
+    fibos.occluded_surface(pdb, methodology)
+    # Calcule OSP value
     fibos.respak("prot.srf")
 
+if __name__ == '__main__':
+    #Call osp_calcule function, with 1ubq as PDB file and FIBOS Methodology
+    osp_calcule("1ubq","FIBOS")
+```
+##### Output:
+![img_2.png](img_2.png)
 ## Authors
 
 - Herson Soares: d2020102075@unifei.edu.br

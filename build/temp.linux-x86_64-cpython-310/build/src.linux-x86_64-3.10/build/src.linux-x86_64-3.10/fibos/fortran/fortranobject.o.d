@@ -82,21 +82,19 @@ build/temp.linux-x86_64-cpython-310/build/src.linux-x86_64-3.10/build/src.linux-
  /usr/include/python3.10/cpython/fileutils.h \
  /usr/include/python3.10/cpython/pyfpe.h \
  /usr/include/python3.10/tracemalloc.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/arrayobject.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarrayobject.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarraytypes.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_common.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/numpyconfig.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/_numpyconfig.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_endian.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_cpu.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/utils.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/old_defines.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/__multiarray_api.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_interrupt.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_3kcompat.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/npy_common.h \
- /usr/lib/python3/dist-packages/numpy/core/include/numpy/ndarrayobject.h
-commandline: -Ibuild/src.linux-x86_64-3.10/build/src.linux-x86_64-3.10/fibos/fortran -I/usr/lib/python3/dist-packages/numpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/distutils/include -I/usr/include/python3.10 -c-msse -msse2 -msse3-Ibuild/src.linux-x86_64-3.10/build/src.linux-x86_64-3.10/fibos/fortran -I/usr/lib/python3/dist-packages/numpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/distutils/include -I/usr/include/python3.10
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/arrayobject.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/ndarraytypes.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_common.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/numpyconfig.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/_numpyconfig.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_endian.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_cpu.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/utils.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/__multiarray_api.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_interrupt.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_3kcompat.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/npy_common.h \
+ /home/herson/.local/lib/python3.10/site-packages/numpy/core/include/numpy/ndarrayobject.h
+commandline: -Ibuild/src.linux-x86_64-3.10/build/src.linux-x86_64-3.10/fibos/fortran -I/home/herson/.local/lib/python3.10/site-packages/numpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/distutils/include -I/usr/include/python3.10 -c-msse -msse2 -msse3-Ibuild/src.linux-x86_64-3.10/build/src.linux-x86_64-3.10/fibos/fortran -I/home/herson/.local/lib/python3.10/site-packages/numpy/core/include -Ibuild/src.linux-x86_64-3.10/numpy/distutils/include -I/usr/include/python3.10

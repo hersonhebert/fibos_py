@@ -11,6 +11,8 @@ setup.py
 ./fibos/fortran/respak75.f
 ./fibos/fortran/surf-sims.h
 ./fibos/fortran/surfcal76.f
+fibos/Disp_dots.py
+fibos/Disp_rays.py
 fibos/__init__.py
 fibos/cleaner.py
 fibos/main_intermediary.py
