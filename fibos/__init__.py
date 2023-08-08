@@ -15,3 +15,4 @@ from .manage_os import occluded_surface
 from .respak import respak
 from .Disp_dots import disp_dots
 from .Disp_rays import disp_rays
+from .cleaner import clean

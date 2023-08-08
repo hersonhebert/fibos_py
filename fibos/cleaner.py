@@ -56,7 +56,7 @@ def clean(file):
        for line in file:
            if not ("END" in line):
               last_line = line
-    last_residue = int(last_line[23:26])
+    last_residue = int(last_line[22:26])
     os.remove("temp.pdb")
     os.rename("new.pdb", "temp.pdb")
     return(last_residue)
