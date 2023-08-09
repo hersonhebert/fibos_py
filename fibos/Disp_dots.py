@@ -4,7 +4,7 @@ from pymol.cgo import *
 import string
 import math
 import sys
-# print('Enter "dots" to display Occulded Surface dots')
+# print('Enter "dots" to display Occluded Surface dots')
 obj = []
 
 

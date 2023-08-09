@@ -20,7 +20,7 @@ if __name__ == '__main__':
             'setuptools>=67.8.0',
             'numpy>=1.21.5',
             'biopython>=1.81',
-            'pymol>=2.5.0',
+            'pymol>=2.3.0',
         ],
         description = 'Package to calcule Occluded Surfaces',
         author = 'Herson',
