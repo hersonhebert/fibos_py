@@ -31,7 +31,7 @@ Note: These additional libraries are also required:
 ## How use
 ### Installing the Package
     
-    pip install git+https://github.com/hersonhebert/fibos
+    pip install git+https://github.com/hersonhebert/fibos_py
     
 ### Using the Package:
 In this beta version, only two functions were implemented: **occluded_surface** and **read_OS**.
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 ```
 ##### Output:
 
-![img_2.png](img_2.png)
+![respack.png](img_2.png)
 
 
 #### Third Example: Generating Dots Visualization:
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     visualize("raydist.lst","1ubq", "dots")
 ```
 ##### Output: 
-![img_3.png](img_3.png)
+![dots.png](img_3.png)
 
 #### Fourth Example: Generating Rays Visualization
 ```
@@ -107,7 +107,7 @@ if __name__ == '__main__':
 ```
 
 ##### Output:
-![img_1.png](img_1.png)
+![rays.png](img_1.png)
 ## Authors
 
 - Carlos Silveira:  carlos.silveira@unifei.edu.br
