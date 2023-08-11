@@ -75,7 +75,7 @@ if __name__ == '__main__':
 ```
 ##### Output:
 
-![respack.png](img_2.png)
+![respack.png](respack.png)
 
 
 #### Third Example: Generating Dots Visualization:
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     visualize("raydist.lst","1ubq", "dots")
 ```
 ##### Output: 
-![dots.png](img_3.png)
+![dots.png](dots.png)
 
 #### Fourth Example: Generating Rays Visualization
 ```
@@ -107,7 +107,7 @@ if __name__ == '__main__':
 ```
 
 ##### Output:
-![rays.png](img_1.png)
+![rays.png](rays.png)
 ## Authors
 
 - Carlos Silveira:  carlos.silveira@unifei.edu.br
