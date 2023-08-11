@@ -12,7 +12,8 @@ sys.path.append(path_abs)
 
 from .cleaner import get_file
 from .manage_os import occluded_surface
-from .respak import respak
-from .Disp_dots import disp_dots
-from .Disp_rays import disp_rays
+from .respak import respack
+#from .Disp_dots import disp_dots
+#from .Disp_rays import disp_rays
+from .visualize import pymol_visualize
 from .cleaner import clean

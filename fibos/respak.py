@@ -2,7 +2,7 @@ import respak75
 import os
 import shutil
 
-def respak(file):
+def respack(file):
     if not(os.path.exists(file)):
         print("Prot File not found!")
     else:

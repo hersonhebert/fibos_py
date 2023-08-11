@@ -1,6 +1,8 @@
 # FIBOS
 ## Description
-The FIBOS package was developed with the objective to offer in R the Occluded Surface methodology, created by Patrick Fleming and coauthors [Pattabiraman, Ward, & Fleming, 1995]
+The FIBOS package was developed with the objective to offer in Python the Occluded Surface methodology, created by Patrick Fleming and coauthors [Pattabiraman, Ward, & Fleming, 1995].
+
+There is also a version of the FIBOS package implemented as a library for the R language, which can be accessed at: https://github.com/hersonhebert/fibos_r.git
 ## Functionalities
 The package allows the calculation of occluded surface areas between atoms of a molecule, using as input a PDB code or PDB file.
 ## Requirements
@@ -10,6 +12,17 @@ Firstly, it is necessary to have the following packages installed:
     pip install biopython
     pip install numpy
     pip install pymol
+
+Furthermore, the installation of the 'testresources' package is still necessary. To perform the installation, you should use the following command:
+
+For Python 2:
+    
+    sudo apt install python-testresources
+
+For Python 3:
+    
+    sudo apt install python3-testresources
+
 Note: These additional libraries are also required:
  - os
  - shutil
@@ -35,60 +48,72 @@ The second function read a "prot.srt" file.
 
 
 ## Examples
-#### First Example:
+#### First Example: Calculating Occluded Surfaces:
 ```
 import fibos
 
-def visualize(pdb, methodology):
+def call_occluded(pdb, methodology):
     # Call occluded surface function
     fibos.occluded_surface(pdb, methodology)
-    # Plot PDB File and Dots
-    fibos.disp_dots("raydist.lst", pdb)
-
 if __name__ == '__main__':
-    #Call visualize function, with 1ubq as PDB file and OS Methodology
-    visualize("1ubq","OS")
+    #Call call_occluded function, with 1ubq as PDB file and OS Methodology
+    call_occluded("1ubq","OS")
+```
+##### Output: prot.srf file, raydist.lst file.
+
+#### Second Example: Calculating OSP Value:
+```
+import fibos
+
+def calc_osp(prot_file):
+    # Call respack function
+    fibos.respack(prot_file)
+    
+if __name__ == '__main__':
+    #Call calc_osp function, with prot.srf file
+    calc_osp("prot.srf")
 ```
 ##### Output:
-![img_3.png](img_3.png)
-#### Second Example:
+
+![img_2.png](img_2.png)
+
+
+#### Third Example: Generating Dots Visualization:
 ```
 import fibos
 
-def visualize(pdb, methodology):
-    # Call occluded surface function
-    fibos.occluded_surface(pdb, methodology)
-    # Plot PDB File and Rays
-    fibos.disp_rays("raydist.lst", pdb)
+def visualize(raydist_file, pdb, type_visualization):
+    # Plot
+    fibos.pymol_visualize(raydist_file, pdb, type_visualization)
 
 if __name__ == '__main__':
-    #Call visualize function, with 1ubq as PDB file and FIBOS Methodology
-    visualize("1ubq","FIBOS")
+    #Call visualize function, with 1ubq as PDB file and Dots as type visualization
+    visualize("raydist.lst","1ubq", "dots")
 ```
+##### Output: 
+![img_3.png](img_3.png)
+
+#### Fourth Example: Generating Rays Visualization
+```
+import fibos
+
+def visualize(raydist_file, pdb, type_visualization):
+    # Plot
+    fibos.pymol_visualize(raydist_file, pdb, type_visualization)
+
+if __name__ == '__main__':
+    #Call visualize function, with 1ubq as PDB file and Rays as type visualization
+    visualize("raydist.lst","1ubq", "rays")
+```
+
 ##### Output:
 ![img_1.png](img_1.png)
-#### Third Example:
-```
-import fibos
-
-def osp_calcule(pdb, methodology):
-    # Call occluded surface function
-    fibos.occluded_surface(pdb, methodology)
-    # Calcule OSP value
-    fibos.respak("prot.srf")
-
-if __name__ == '__main__':
-    #Call osp_calcule function, with 1ubq as PDB file and FIBOS Methodology
-    osp_calcule("1ubq","FIBOS")
-```
-##### Output:
-![img_2.png](img_2.png)
 ## Authors
 
-- Herson Soares: d2020102075@unifei.edu.br
 - Carlos Silveira:  carlos.silveira@unifei.edu.br
+- Herson Soares: d2020102075@unifei.edu.br
 - João Romanelli: joaoromanelli@unifei.edu.br
-
+- Patrick Fleming: Pat.Fleming@jhu.edu
 
 ## References
 

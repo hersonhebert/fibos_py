@@ -21,6 +21,7 @@ fibos/manage_os.py
 fibos/radii
 fibos/read_prot.py
 fibos/respak.py
+fibos/visualize.py
 fibos.egg-info/PKG-INFO
 fibos.egg-info/SOURCES.txt
 fibos.egg-info/dependency_links.txt
