@@ -11,8 +11,7 @@ Firstly, it is necessary to have the following packages installed:
 
     pip install biopython
     pip install numpy
-    pip install pymol
-
+   
 Furthermore, the installation of the 'testresources' package is still necessary. To perform the installation, you should use the following command:
 
 For Python 2:
@@ -23,10 +22,14 @@ For Python 3:
     
     sudo apt install python3-testresources
 
-Note: These additional libraries are also required:
+Note:
+
+These additional libraries are also required:
  - os
  - shutil
  - pkgutils
+
+Additionally, PyMOL needs to be installed.
 
 ## How use
 ### Installing the Package
