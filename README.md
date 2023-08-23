@@ -7,11 +7,21 @@ There is also a BETA version of the FIBOS-R package implemented as a library for
 The package allows the calculation of occluded surface areas between atoms of a molecule, using as input a PDB code or PDB file.
 ## Requirements
 
-Firstly, it is necessary to have the following packages installed:
+The FIBOS library has some dependencies that need to be installed beforehand. Follow the steps below:
 
-    pip install biopython
-    pip install numpy
-   
+1. First, download the file `enviroment.yml <https://github.com/hersonhebert/fibos_py/blob/main/fibos.yml>` file.
+
+
+2. Create a Conda environment using the following command:
+
+    
+    conda env create -f fibos.yml
+
+3. After creating the Conda environment, activate it using the following command:
+
+    
+    conda activate fibos-env
+
 Furthermore, the installation of the 'testresources' package is still necessary. To perform the installation, you should use the following command:
 
 For Python 2:
@@ -28,8 +38,6 @@ These additional libraries are also required:
  - os
  - shutil
  - pkgutils
-
-Additionally, PyMOL needs to be installed.
 
 ## How use
 ### Installing the Package
