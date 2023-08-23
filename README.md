@@ -1,8 +1,8 @@
-# FIBOS
+# FIBOS-PY (BETA)
 ## Description
-The FIBOS package was developed with the objective to offer in Python the Occluded Surface methodology, created by Patrick Fleming and coauthors [Pattabiraman, Ward, & Fleming, 1995].
+The FIBOS-PY package was developed with the objective to offer in Python the Occluded Surface methodology, created by Patrick Fleming and coauthors [Pattabiraman, Ward, & Fleming, 1995].
 
-There is also a version of the FIBOS package implemented as a library for the R language, which can be accessed at: https://github.com/hersonhebert/fibos_r.git
+There is also a BETA version of the FIBOS-R package implemented as a library for the R language, which can be accessed at: https://github.com/hersonhebert/fibos_r.git
 ## Functionalities
 The package allows the calculation of occluded surface areas between atoms of a molecule, using as input a PDB code or PDB file.
 ## Requirements
