@@ -1,0 +1,7 @@
+name: fibos-env
+channels:
+  - schrodinger
+  - defaults
+dependencies:
+  - pymol
+  - numpy
