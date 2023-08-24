@@ -9,6 +9,16 @@ The package allows the calculation of occluded surface areas between atoms of a 
 
 ## Requirements
 
+Firstly, the installation of the 'testresources' package is still necessary. If you do not have, you should use the following command:
+
+For Python 2:
+    
+    sudo apt install python-testresources
+
+For Python 3:
+    
+    sudo apt install python3-testresources
+
 The FIBOS library has some dependencies that need to be installed beforehand. Follow the steps below:
 
 1. First, download the file [fibos.yml](https://github.com/hersonhebert/fibos_py/blob/main/fibos.yml).
@@ -23,18 +33,6 @@ The FIBOS library has some dependencies that need to be installed beforehand. Fo
 3. After creating the Conda environment, activate it using the following command:
     
         conda activate fibos-env
-
-Furthermore, the installation of the 'testresources' package is still necessary. To perform the installation, you should use the following command:
-
-For Python 2:
-    
-    sudo apt install python-testresources
-
-For Python 3:
-    
-    sudo apt install python3-testresources
-
-Note:
 
 These additional libraries are also required:
  - os
