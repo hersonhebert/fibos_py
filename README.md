@@ -1,26 +1,28 @@
 # FIBOS-PY (BETA)
+
 ## Description
 The FIBOS-PY package was developed with the objective to offer in Python the Occluded Surface methodology, created by Patrick Fleming and coauthors [Pattabiraman, Ward, & Fleming, 1995].
 
-There is also a BETA version of the FIBOS-R package implemented as a library for the R language, which can be accessed at: https://github.com/hersonhebert/fibos_r.git
+There is also a BETA version of the FIBOS-R package implemented as a library for the R language, which can be accessed at: [FIBOS-R (BETA)](https://github.com/hersonhebert/fibos_r.git).
 ## Functionalities
 The package allows the calculation of occluded surface areas between atoms of a molecule, using as input a PDB code or PDB file.
+
 ## Requirements
 
 The FIBOS library has some dependencies that need to be installed beforehand. Follow the steps below:
 
-1. First, download the file `enviroment.yml <https://github.com/hersonhebert/fibos_py/blob/main/fibos.yml>` file.
+1. First, download the file [fibos.yml](https://github.com/hersonhebert/fibos_py/blob/main/fibos.yml).
+
+   ** Note: If you do not have a Conda environment installed, you will need to install it. For this, please refer to the [Docs Anaconda](https://docs.anaconda.com/free/anaconda/install/linux/). 
 
 
 2. Create a Conda environment using the following command:
 
-    
-    conda env create -f fibos.yml
+        conda env create -f fibos.yml
 
 3. After creating the Conda environment, activate it using the following command:
-
     
-    conda activate fibos-env
+        conda activate fibos-env
 
 Furthermore, the installation of the 'testresources' package is still necessary. To perform the installation, you should use the following command:
 
@@ -45,80 +47,76 @@ These additional libraries are also required:
     pip install git+https://github.com/hersonhebert/fibos_py
     
 ### Using the Package:
-In this beta version, only two functions were implemented: **occluded_surface** and **read_OS**.
+In this beta version, some functions were implemented:
 
-The first function is responsible for computing the occluded areas between atoms and returning the results as a tibble/data frame. Additionally, it generates the prot.srf file as a side effect.
 
-Parameters:
+1. **occluded_surface**: This function is responsible for computing the occluded areas between atoms and returning the results as a tibble/data frame. Additionally, it generates the prot.srf file as a side effect.
 
-  - pdb: this can either be the code or path/file of the PDB that represents a protein. If you wish to obtain the file online from the RCSB PDB site, simply enter the PDB code. If the file is saved locally, enter the file path.
+   Parameters:
 
-  - method: this parameter determines the method used to calculate the occluded areas between atoms. Accepts the strings "OS" (tradicional) or "FIBOS" (experimental).
+   - pdb: this can either be the code or path/file of the PDB that represents a protein. If you wish to obtain the file online from the RCSB PDB site, simply enter the PDB code. If the file is saved locally, enter the file path.
 
-The second function read a "prot.srt" file.
+   - method: this parameter determines the method used to calculate the occluded areas between atoms. Accepts the strings "OS" (tradicional) or "FIBOS" (experimental).
+
+
+2. **respack**:The "respack" function aims to calculate the value of OSP, which is related to the assessment of residue packing.
+
+   Parameters:
+   - prot.srf: "The prot.srf file contains all the information from the calculation of occluded surface and extension of surface normals." You can view more about Prot File in [Prot.srf](https://pages.jh.edu/pfleming/sw/os/prot.srf.html).
+
+
+3. **pymol_visualize**: Using the "pymol_visualize" function, it is possible to generate visualizations of the dots and rays generated during the execution of the "occluded surface" function.
+
+   Parameters:
+   
+   - raydist.lst: "The file raydist.lst (output by occluded surface function) contains the coordinates, lengths, and normal vectors for the rays of the residue(s).".
+   - pdb: this can either be the code or path/file of the PDB that represents a protein. If you wish to obtain the file online from the RCSB PDB site, simply enter the PDB code. If the file is saved locally, enter the file path.
+   - type: In the "type" option, you can choose how you want to visualize the results of the packing process: as rays  or dots.
 
 
 ## Examples
-#### First Example: Calculating Occluded Surfaces:
+### First Example: 
+Calculating Occluded Surfaces:
 ```
 import fibos
-
-def call_occluded(pdb, methodology):
-    # Call occluded surface function
-    fibos.occluded_surface(pdb, methodology)
-if __name__ == '__main__':
-    #Call call_occluded function, with 1ubq as PDB file and OS Methodology
-    call_occluded("1ubq","OS")
+    fibos.occluded_surface("1ubq","FIBOS")
 ```
-##### Output: prot.srf file, raydist.lst file.
+Output: 
+ - prot.srf file.
+ - raydist.lst file.
 
-#### Second Example: Calculating OSP Value:
+### Second Example: 
+Calculating OSP Value:
 ```
 import fibos
-
-def calc_osp(prot_file):
-    # Call respack function
-    fibos.respack(prot_file)
-    
-if __name__ == '__main__':
-    #Call calc_osp function, with prot.srf file
-    calc_osp("prot.srf")
+    fibos.respack("prot.srf")
 ```
-##### Output:
+Output:
 
 ![respack.png](respack.png)
 
 
-#### Third Example: Generating Dots Visualization:
+### Third Example:
+Generating Dots Visualization:
 ```
 import fibos
-
-def visualize(raydist_file, pdb, type_visualization):
-    # Plot
-    fibos.pymol_visualize(raydist_file, pdb, type_visualization)
-
-if __name__ == '__main__':
-    #Call visualize function, with 1ubq as PDB file and Dots as type visualization
-    visualize("raydist.lst","1ubq", "dots")
+    fibos.pymol_visualize("raydist.lst","1ubq", "dots")
 ```
-##### Output: 
+Output: 
+
 ![dots.png](dots.png)
 
-#### Fourth Example: Generating Rays Visualization
+### Fourth Example: 
+Generating Rays Visualization
 ```
 import fibos
-
-def visualize(raydist_file, pdb, type_visualization):
-    # Plot
-    fibos.pymol_visualize(raydist_file, pdb, type_visualization)
-
-if __name__ == '__main__':
-    #Call visualize function, with 1ubq as PDB file and Rays as type visualization
-    visualize("raydist.lst","1ubq", "rays")
+    fibos.pymol_visualize("raydist.lst","1ubq", "rays")
 ```
 
-##### Output:
+Output:
+
 ![rays.png](rays.png)
+
 ## Authors
 
 - Carlos Silveira:  carlos.silveira@unifei.edu.br
