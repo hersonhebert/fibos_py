@@ -1,7 +1,7 @@
 name: fibos-env
 channels:
-  - schrodinger
+  - conda-forge
   - defaults
 dependencies:
-  - pymol
+  - pymol-open-source
   - numpy
