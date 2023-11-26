@@ -3,6 +3,7 @@ import cleaner
 import main_intermediary
 import pkgutil
 import shutil
+from read_Os import read_prot
 
 MAX_RES = 10000
 MAX_AT = 50000
@@ -29,6 +30,7 @@ def occluded_surface(pdb,method):
     meth = 1
     main_intermediary.call_main(IRESF,iresl,MAX_RES,MAX_AT,meth)
     remove_files()
+    return read_prot("prot.srf")
 
 def remove_files():
     path = os.getcwd()

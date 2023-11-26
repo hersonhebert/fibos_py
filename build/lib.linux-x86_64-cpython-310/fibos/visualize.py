@@ -70,19 +70,13 @@ def dots_visualize(raydist, selection='all', name=''):
     col_b = 0.20
     radius = 0.2
 
-    infile = raydist
-    lines = open(infile, 'r').readlines()
-    for line in lines:
-        items = line.strip().split()
-        x1 = float(items[3]);
-        y1 = float(items[4]);
-        z1 = float(items[5])
-        #       x2 = x1 + (2.8 * float(items[6]) * float(items[8]))
-        #       y2 = y1 + (2.8 * float(items[6]) * float(items[9]))
-        #       z2 = z1 + (2.8 * float(items[6]) * float(items[10]))
-        x2 = x1 + (0.05 * float(items[8]))
-        y2 = y1 + (0.05 * float(items[9]))
-        z2 = z1 + (0.05 * float(items[10]))
+    for i in range(0,len(raydist.iloc[:,1])):
+        x1 = raydist.iloc[i,3]
+        y1 = raydist.iloc[i,4]
+        z1 = raydist.iloc[i,5]
+        x2 = x1 + (0.05 * raydist.iloc[i,8])
+        y2 = y1 + (0.05 * raydist.iloc[i,9])
+        z2 = z1 + (0.05 * raydist.iloc[i,10])
         obj.extend([CYLINDER, x1, y1, z1, x2, y2, z2, radius, col_r, col_g, col_b, col_r, col_g, col_b])
     cmd.load_cgo(obj, 'dots_visualize')
 #    cmd.extend("dots",dots_visualize)
@@ -92,25 +86,23 @@ def rays_visualize(raydist,selection='all',name=''):
     col_b = 0.20
     radius = 0.1
 
-    infile=raydist
-    lines = open(infile, 'r').readlines()
-    for line in lines:
-        items = line.strip().split()
-        x1 = float(items[3]); y1 = float(items[4]); z1 = float(items[5])
-        x2 = x1 + (2.8 * float(items[6]) * float(items[8]))
-        y2 = y1 + (2.8 * float(items[6]) * float(items[9]))
-        z2 = z1 + (2.8 * float(items[6]) * float(items[10]))
+    for i in range(0,len(raydist['B'])):
+        x1 = raydist.iloc[i,3]
+        y1 = raydist.iloc[i,4]
+        z1 = raydist.iloc[i,5]
+        x2 = x1 + (2.8 * raydist.iloc[i,6] * raydist.iloc[i,8])
+        y2 = y1 + (2.8 * raydist.iloc[i,6] * raydist.iloc[i,9])
+        z2 = z1 + (2.8 * raydist.iloc[i,6] * raydist.iloc[i,10])
         obj.extend([ CYLINDER,x1,y1,z1,x2,y2,z2,radius,col_r,col_g,col_b,col_r,col_g,col_b ])
     cmd.load_cgo(obj,'rays_visualize')
 
-#cmd.extend("rays",rays_visualize)
 def open_pymol_view(pdb):
     pymol.finish_launching()
     pymol.cmd.fetch(pdb)
     pymol.cmd.show("spheres")
     # Abra a janela de visualização 3D do PyMOL
 #    pymol.cmd.viewport(800, 600)  # Defina o tamanho da janela de visualização
-    pymol.cmd.save("teste.pml")
+#    pymol.cmd.save("teste.pml")
 #    pymol.cmd.orient()  # Alinhe a vista 3D
 
 
@@ -121,4 +113,3 @@ def pymol_visualize(raydist, pdb, type_visualization):
             dots_visualize(raydist)
         else:
             rays_visualize(raydist)
-#        pymol.cmd.quit()
