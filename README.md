@@ -120,7 +120,7 @@ Output:
 Reading raydist file:
 ```
 import fibos
-    raydist = read_disp("raydist.lst")
+    raydist = read_Disp("raydist.lst")
 ```
 Output: 
 
