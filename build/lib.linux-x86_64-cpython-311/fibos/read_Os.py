@@ -1,9 +1,9 @@
 import pandas as pd
 import re
 
-def read_OS(prot_file):
+def read_prot(prot_file):
     lines = []
-    name_columns = ['ATOM', 'NUMBER_POINTS', 'AREA', 'RAYLENGTH', 'DISTANCE']
+    name_columns = ['INTERACTION', 'NUMBER_POINTS', 'AREA', 'RAYLENGTH', 'DISTANCE']
     with open(prot_file,"r") as pfile:
         for item in pfile:
             if("INF" in item):

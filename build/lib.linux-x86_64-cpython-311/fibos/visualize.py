@@ -70,12 +70,6 @@ def dots_visualize(raydist, selection='all', name=''):
     col_b = 0.20
     radius = 0.2
 
-#    raydist.iloc[:,3] = raydist.iloc[:,3].astype(float);
-#    raydist.iloc[:,4] = raydist.iloc[:,4].astype(float);
-#    raydist.iloc[:,5] = raydist.iloc[:,5].astype(float)
-#    raydist.iloc[:,8] = raydist.iloc[:,8].astype(float);
-#    raydist.iloc[:,9] = raydist.iloc[:,9].astype(float);
-#    raydist.iloc[:,10] = raydist.iloc[:,10].astype(float)
     for i in range(0,len(raydist.iloc[:,1])):
         x1 = raydist.iloc[i,3]
         y1 = raydist.iloc[i,4]
@@ -92,13 +86,6 @@ def rays_visualize(raydist,selection='all',name=''):
     col_b = 0.20
     radius = 0.1
 
- #   raydist.iloc[:,3] = raydist.iloc[:,3].astype(float);
- #   raydist.iloc[:,4] = raydist.iloc[:,4].astype(float);
- #   raydist.iloc[:,5] = raydist.iloc[:,5].astype(float)
- #   raydist.iloc[:,6] = raydist.iloc[:,6].astype(float)
- #   raydist.iloc[:,8] = raydist.iloc[:,8].astype(float);
- #   raydist.iloc[:,9] = raydist.iloc[:,9].astype(float);
- #   raydist.iloc[:,10] = raydist.iloc[:,10].astype(float)
     for i in range(0,len(raydist['B'])):
         x1 = raydist.iloc[i,3]
         y1 = raydist.iloc[i,4]

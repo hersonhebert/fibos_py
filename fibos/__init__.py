@@ -12,8 +12,8 @@ sys.path.append(path_abs)
 
 #from .cleaner import get_file
 from .manage_os import occluded_surface
-from .respak import respack
+#from .respak import respack
 #from .cleaner import clean
 from .read_Os import read_prot
 from .read_Disp import read_Disp
-from .visualize import pymol_visualize
+#from .visualize import pymol_visualize

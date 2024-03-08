@@ -12,8 +12,10 @@ def get_file(file):
             path = "pdb"+file+".ent"
             os.rename(path, file+".pdb")
         shutil.copy(file+".pdb", "temp.pdb")
-    elif ".pdb" in file:
+    elif (".pdb" in file and not (os.path.exists(file))):
         shutil.copy(file, path)
+        shutil.copy(file, "temp.pdb")
+    elif (".pdb" in file and (os.path.exists(file))):
         shutil.copy(file, "temp.pdb")
     last = clean("temp.pdb")
     return last

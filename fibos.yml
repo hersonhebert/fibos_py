@@ -1,7 +1,0 @@
-name: fibos-env
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - pymol-open-source
-  - numpy
