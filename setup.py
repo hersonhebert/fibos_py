@@ -1,7 +1,6 @@
 from setuptools import find_packages
 from numpy.distutils.core import setup
 from numpy.distutils.misc_util import Configuration
-import os
 def configuration(parent_package='', top_path=None):
     config = Configuration('fibos', parent_package, top_path)
     config.add_extension('main75', sources=['fibos/fortran/main75.pyf','fibos/fortran/main75.f'])
