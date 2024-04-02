@@ -34,9 +34,9 @@ def occluded_surface(pdb,method = "FIBOS"):
     file_remove = pdb
     if pdb.endswith(".pdb"):
         file_remove = pdb.replace(".pdb","")
-        ray_remove = "raydist_"+file_remove+".lst"
-        pack_remove = "prot_"+file_remove+".pak"
-        file_remove = "prot_"+file_remove+".srf"
+    ray_remove = "raydist_"+file_remove+".lst"
+    pack_remove = "prot_"+file_remove+".pak"
+    file_remove = "prot_"+file_remove+".srf"
     if os.path.exists(file_remove):
         os.remove(file_remove)
     if os.path.exists(ray_remove):
