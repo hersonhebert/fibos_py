@@ -1,9 +1,14 @@
 import os
-def create_folder():
+import shutil
+def create_folder(pdb):
     if ((os.path.exists("fibos_files") == False) and (os.path.basename(os.getcwd())!= "fibos_files")):
         os.mkdir("fibos_files")
+        if pdb.endswith(".pdb"):
+            shutil.copy(pdb,"fibos_files")
         os.chdir("fibos_files")
     elif((os.path.basename(os.getcwd())!= "fibos_files")):
+        if pdb.endswith(".pdb"):
+            shutil.copy(pdb,"fibos_files")
         os.chdir("fibos_files")
 
 def rename_file(pdb_name):
