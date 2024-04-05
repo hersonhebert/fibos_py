@@ -3971,7 +3971,7 @@ C        TESTE = TESTE+AR(i)
      &	'GENUN01:N =',NU,' area norm=',aaf
 	write(*,*)'dotN   x   y   z area TETA'
 	do i=1,NU
-	write(*,'(i5,5f8.3)')i,U(1,i),U(2,i),U(3,i),AR(i),TET(i)
+c	write(*,'(i5,5f8.3)')i,U(1,i),U(2,i),U(3,i),AR(i),TET(i)!alterado
 	enddo
 	endif
 
