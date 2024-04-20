@@ -11,8 +11,8 @@ def make():
     with open("table_4.dat", "r") as list_pdbs, open("all_paks_mean.dat","w") as means:
         for items in list_pdbs:
             items = items.strip()
-            fibos.occluded_surface(items,"os")
-            fibos.respak()
+            fibos.occluded_surface(items,"fibos")
+            fibos.respak("prot.srf")
             respak_pdb = pd.read_csv("prot.pak", delim_whitespace=True, names = column_names)
             respak_pdb = respak_pdb['OSP'][1:]
             aux = respak_pdb.astype(float)
