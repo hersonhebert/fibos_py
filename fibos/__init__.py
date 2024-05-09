@@ -25,5 +25,6 @@ if((platform.system() == "Windows") and os.path.exists(origem)):
             shutil.move(caminho_origem, caminho_destino)
 
 from .manage_os import occluded_surface
-from .read_Os import read_prot
-from .read_Disp import read_Disp
+from .read_os import read_prot
+from .respak import osp
+from .respak import read_osp

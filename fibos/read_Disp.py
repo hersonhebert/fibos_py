@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 
-def read_Disp(raydist_file):
+def read_osp(raydist_file):
     lines = []
     name_columns = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N']
     with open(raydist_file,"r") as rfile:

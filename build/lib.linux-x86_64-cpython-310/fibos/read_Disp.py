@@ -1,6 +1,5 @@
 import pandas as pd
 import re
-from visualize import pymol_visualize
 
 def read_Disp(raydist_file):
     lines = []

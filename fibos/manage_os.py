@@ -3,10 +3,10 @@ import cleaner
 import main_intermediary
 import pkgutil
 import shutil
-from read_Os import read_prot
-from folders_manipulate import  create_folder
-from folders_manipulate import rename_file
-from respak import respack
+from read_os import read_prot
+from folders_manipulate import create_folder
+from folders_manipulate import change_files
+from respak import osp
 
 MAX_RES = 10000
 MAX_AT = 50000
@@ -14,6 +14,7 @@ IRESF = 1
 
 
 def occluded_surface(pdb,method = "FIBOS"):
+    remove_files()
     create_folder(pdb)
     pdb = pdb.lower()
     name_pack = "fibos"
@@ -45,21 +46,16 @@ def occluded_surface(pdb,method = "FIBOS"):
         os.remove(pack_remove)
     main_intermediary.call_main(IRESF,iresl,MAX_RES,MAX_AT,meth)
     remove_files()
-    file_name = rename_file(pdb)
-    pak_file = file_name
-    file_name = "prot_"+file_name+".srf"
-    os_file = read_prot(file_name)
-    res_file = respack(file_name)
-    pak_file = "prot_"+pak_file+".pak"
-    os.rename("prot.pak", pak_file)
-    return (os_file, res_file)
+    file_name = change_files(pdb)
+    return (read_prot(file_name))
 
 def remove_files():
     path = os.getcwd()
     extensions = ['.ms','.txt','.inp']
     files = [file for file in os.listdir(path) if any(file.endswith(ext) for ext in extensions)]
-    for file in files:
-        os.remove(os.path.join(path, file))
+    if len(files)>0:
+        for file in files:
+            os.remove(os.path.join(path, file))
     if os.path.exists(os.path.join(path,"fort.6")):
         os.remove(os.path.join(path,"fort.6"))
     if os.path.exists(os.path.join(path, "part_i.pdb")):
